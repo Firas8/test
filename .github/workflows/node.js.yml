@@ -26,7 +26,9 @@ jobs:
     - name: Change de branche 2
       run: git fetch origin main
     - name: Update Version
-      run: npm version major --git-tag-version false
+      run: new_version=$(npm version major --git-tag-version false)
+    - name: Output new version
+      run: echo "$new_version"
     - name: Set email 
       run: git config --global user.email "firas.gabsi@gmail.com"
     - name: Set name
