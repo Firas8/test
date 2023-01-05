@@ -44,4 +44,4 @@ jobs:
     - name: publish tag
       run: git push --tags
     - name: test
-      run: git push origin master
+      run: git push origin main
