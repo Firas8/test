@@ -1,5 +1,5 @@
 {
-  "name": "calculate-module-semver",
+  "name": "demo-node",
   "version": "1.0.0",
   "description": "This NPM module is an example project to demonstrate the SemVer versioning",
   "main": "index.js",
