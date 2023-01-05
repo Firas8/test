@@ -23,6 +23,12 @@ jobs:
         node-version: '12.x'
     - name: Install dependencies
       run: npm install
+    - name: Change de branche
+      run: Git checkout main
+    - name: Change de branche 2
+      run: git fetch origin main
+    - name: Change de branche 3
+      run: git rebase -i origin/main
     - name: Update Version
       run: npm version major --git-tag-version false
     - name: Set email 
@@ -34,4 +40,4 @@ jobs:
     - name: Git Flow Step 1
       run: git commit -m "commit message"
     - name: Git Flow Step 2
-      run: git flow
+      run: git push origin main
