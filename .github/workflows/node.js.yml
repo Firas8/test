@@ -24,7 +24,7 @@ jobs:
     - name: Install dependencies
       run: npm install
     - name: Update Version
-      run: npm version major    
+      run: npm version major --git-tag-version false  
     - name: Git Flow Step 1
       run: git commit -m "commit message"
     - name: Git Flow Step 2
