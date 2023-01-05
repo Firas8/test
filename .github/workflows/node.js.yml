@@ -41,3 +41,7 @@ jobs:
       run: git push origin main
     - name: Create a TAG for our new Release
       run: git tag -d $new_version
+    - name: publish tag
+      run: git push --tags
+    - name: test
+      run: git push origin master
