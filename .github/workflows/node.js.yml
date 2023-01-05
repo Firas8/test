@@ -34,4 +34,4 @@ jobs:
     - name: Git Flow Step 1
       run: git commit -m "commit message"
     - name: Git Flow Step 2
-      run: git push
+      run: git flow
