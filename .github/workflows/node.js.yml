@@ -28,7 +28,7 @@ jobs:
     - name: Set email 
       run: git config --global user.email "firas.gabsi@gmail.com"
     - name: Set name
-      run: it config --global user.name "firas8"
+      run: git config --global user.name "firas8"
     - name: Git Flow Step 1
       run: git commit -m "commit message"
     - name: Git Flow Step 2
