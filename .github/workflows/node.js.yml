@@ -24,7 +24,7 @@ jobs:
     - name: Install dependencies
       run: npm install
     - name: Change de branche
-      run: Git checkout main
+      run: git checkout main
     - name: Change de branche 2
       run: git fetch origin main
     - name: Change de branche 3
