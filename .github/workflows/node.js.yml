@@ -40,4 +40,4 @@ jobs:
     - name: Git Flow Step 2
       run: git push origin main
     - name: Create a TAG for our new Release
-      run: git tag -a $new_version -m 'Tag for release $new_version'
+      run: git tag -d $new_version
