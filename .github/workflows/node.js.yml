@@ -24,7 +24,11 @@ jobs:
     - name: Install dependencies
       run: npm install
     - name: Update Version
-      run: npm version major --git-tag-version false  
+      run: npm version major --git-tag-version false
+    - name: Set email 
+      run: git config --global user.email "firas.gabsi@gmail.com"
+    - name: Set name
+      run: it config --global user.name "firas8"
     - name: Git Flow Step 1
       run: git commit -m "commit message"
     - name: Git Flow Step 2
