@@ -34,6 +34,7 @@ jobs:
         with:
           tag: ${{ env.RELEASE_VERSION }}
       - run: git checkout dev
-      - run: git config pull.rebase false
+      - run: git config pull.rebase true
       - run: git pull origin main --allow-unrelated-histories
       - run: git merge origin origin/main
+      - run: git push
