@@ -34,4 +34,7 @@ jobs:
         with:
           tag: ${{ env.RELEASE_VERSION }}
       - run: git checkout dev
-      - run: git pull main --force
+      - run: git pull
+      - run: git stash
+      - run: git merge main
+      - run: git stash pop
