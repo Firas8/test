@@ -34,4 +34,4 @@ jobs:
     - uses: actions/checkout@v3
     - uses: rickstaa/action-create-tag@v1
       with:
-        tag: echo $new_version
+        tag: 'echo "$new_version"'
