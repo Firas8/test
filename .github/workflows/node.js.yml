@@ -33,11 +33,4 @@ jobs:
       - uses: rickstaa/action-create-tag@v1
         with:
           tag: ${{ env.RELEASE_VERSION }}
-      - run: git checkout dev
-      - run: git fetch --all
-      - run: git branch my-backup-branch
-      - run: git switch my-backup-branch
-      - run: git add .
-      - run: git commit -m "Backup of branch"
-      - run: git switch master
-      - run: git reset --hard origin/dev
+      - run: git fetch origin main:dev
