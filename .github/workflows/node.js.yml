@@ -34,7 +34,4 @@ jobs:
         with:
           tag: ${{ env.RELEASE_VERSION }}
       - run: git checkout dev
-      - run: git pull
-      - run: git stash
-      - run: git merge main --allow-unrelated-histories
-      - run: git stash pop
+      - run: git pull main
