@@ -33,5 +33,5 @@ jobs:
       - uses: rickstaa/action-create-tag@v1
         with:
           tag: ${{ env.RELEASE_VERSION }}
-      - run: git checkout devlop
+      - run: git checkout dev
       - run: git merge master
