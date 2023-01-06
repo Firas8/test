@@ -40,8 +40,10 @@ jobs:
     - name: Git Flow Step 2
       run: git push origin main
     - name: Create a TAG for our new Release
-      run: git tag -a $new_version -m 'Tag for release'
+      run: git tag -d $new_version
     - name: publish tag
       run: git push --tags
-    - name: test
+    - name: publish main brunch
       run: git push origin main
+    - name: test
+      run: echo $new_version
