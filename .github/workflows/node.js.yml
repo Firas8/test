@@ -27,12 +27,12 @@ jobs:
       - run: echo "RELEASE_VERSION=$(npm version major --git-tag-version false)" >> $GITHUB_ENV
       - run: echo $RELEASE_VERSION
       - run: git add .
-      - run: git commit -m 'Release "$RELEASE_VERSION"'
+      - run: git commit -m "Release "$RELEASE_VERSION
       - run: git push
       - uses: actions/checkout@v3
       - uses: rickstaa/action-create-tag@v1
         with:
           tag: ${{ env.RELEASE_VERSION }}
       - run: git checkout dev
-      - run: git rebase main --skip
+      - run: git rebase main --no-verify
       - run: git push
