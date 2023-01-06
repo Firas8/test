@@ -33,4 +33,5 @@ jobs:
       - uses: rickstaa/action-create-tag@v1
         with:
           tag: ${{ env.RELEASE_VERSION }}
-      - run: git merge -s ours origin/dev
+      - run: git merge -s ours -m 'SCM-merge-from-master' origin/main
+      - run: git merge -s ours -m 'SCM-merge-from-develop' origin/dev
