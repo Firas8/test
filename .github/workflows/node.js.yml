@@ -34,7 +34,4 @@ jobs:
         with:
           tag: ${{ env.RELEASE_VERSION }}
       - run: git checkout dev
-      - run: git pull
-      - run: git fetch
-      - run: git reset --hard HEAD
-      - run: git merge main
+      - run: git pull main --force
