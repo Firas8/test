@@ -34,4 +34,4 @@ jobs:
         with:
           tag: ${{ env.RELEASE_VERSION }}
       - run: git checkout dev
-      - run: git merge main
+      - run: git merge main --allow-unrelated-histories
