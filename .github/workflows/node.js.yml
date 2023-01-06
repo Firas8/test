@@ -31,9 +31,7 @@ jobs:
     - run: git tag -d $new_version
     - run: git push --tags
     - run: git push origin main
-    - run: echo $new_version
     - uses: actions/checkout@v3
     - uses: rickstaa/action-create-tag@v1
       with:
-        tag: "latest"
-        message: "Latest release"
+        tag: $new_version
