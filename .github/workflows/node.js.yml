@@ -22,7 +22,7 @@ jobs:
       - run: npm install
       - run: git checkout main
       - run: git fetch origin main
-      - run: npm version major --git-tag-version false >> $NEW_VERSION
+      - run: NEW_VERSION=$(npm version major --git-tag-version false)
       - run: git config --global user.email "firas.gabsi@gmail.com"
       - run: git config --global user.name "firas8"
       - run: git add .
@@ -31,5 +31,5 @@ jobs:
       - uses: actions/checkout@v3
       - uses: rickstaa/action-create-tag@v1
         with:
-          tag: $NEW_VERSION
+          tag: ${{ NEW_VERSION }}
       - run: git push origin main
