@@ -33,4 +33,5 @@ jobs:
       - uses: rickstaa/action-create-tag@v1
         with:
           tag: ${{ env.RELEASE_VERSION }}
-      - run: git fetch origin main:dev
+      - run: git fetch origin
+      - run: git checkout -b dev main
