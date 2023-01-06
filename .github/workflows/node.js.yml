@@ -19,31 +19,16 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '12.x'
-    - name: Install dependencies
-      run: npm install
-    - name: Change de branche
-      run: git checkout main
-    - name: Change de branche 2
-      run: git fetch origin main
-    - name: Update Version
-      run: new_version=$(npm version major --git-tag-version false)
-    - name: Output new version
-      run: echo "$new_version"
-    - name: Set email 
-      run: git config --global user.email "firas.gabsi@gmail.com"
-    - name: Set name
-      run: git config --global user.name "firas8"
-    - name: Add change
-      run: git add .
-    - name: Git Flow Step 1
-      run: git commit -m "commit message"
-    - name: Git Flow Step 2
-      run: git push origin main
-    - name: Create a TAG for our new Release
-      run: git tag -d $new_version
-    - name: publish tag
-      run: git push --tags
-    - name: publish main brunch
-      run: git push origin main
-    - name: test
-      run: echo $new_version
+    - run: npm install
+    - run: git checkout main
+    - run: git fetch origin main
+    - run: new_version=$(npm version major --git-tag-version false)
+    - run: git config --global user.email "firas.gabsi@gmail.com"
+    - run: git config --global user.name "firas8"
+    - run: git add .
+    - run: git commit -m "commit message"
+    - run: git push origin main
+    - run: git tag -d $new_version
+    - run: git push --tags
+    - run: git push origin main
+    - run: echo $new_version
