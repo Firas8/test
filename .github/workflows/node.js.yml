@@ -21,11 +21,11 @@ jobs:
           node-version: '12.x'
       - run: npm install
       - run: git checkout main
-      - run: git fetch origin main
-      - run: echo "RELEASE_VERSION=$(npm version major --git-tag-version false)" >> $GITHUB_ENV
-      - run: echo $RELEASE_VERSION
       - run: git config --global user.email "firas.gabsi@gmail.com"
       - run: git config --global user.name "firas8"
+      - run: echo "RELEASE_VERSION=$(npm version major --git-tag-version false)" >> $GITHUB_ENV
+      - run: echo $RELEASE_VERSION
+      - run: git fetch origin main
       - run: git add .
       - run: git commit -m "commit message"
       - run: git push origin main
