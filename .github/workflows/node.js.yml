@@ -34,5 +34,5 @@ jobs:
         with:
           tag: ${{ env.RELEASE_VERSION }}
       - run: git checkout dev
-      - run: git rebase main
+      - run: git rebase main --skip
       - run: git push
