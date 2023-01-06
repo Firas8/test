@@ -22,8 +22,8 @@ jobs:
       - run: npm install
       - run: git checkout main
       - run: git fetch origin main
-      - run: RELEASE_VERSION=$(npm version major --git-tag-version false)
-      - run: echo "$RELEASE_VERSION" >> $GITHUB_ENV
+      - run: echo "RELEASE_VERSION=$(npm version major --git-tag-version false)" >> $GITHUB_ENV
+      - run: npm version major --git-tag-version false
       - run: echo $RELEASE_VERSION
       - run: git config --global user.email "firas.gabsi@gmail.com"
       - run: git config --global user.name "firas8"
