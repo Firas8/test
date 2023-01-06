@@ -33,6 +33,5 @@ jobs:
       - uses: rickstaa/action-create-tag@v1
         with:
           tag: ${{ env.RELEASE_VERSION }}
-      - run: git push origin main
       - run: git checkout devlop
       - run: git merge master
