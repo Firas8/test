@@ -36,5 +36,5 @@ jobs:
       - run: git checkout dev
       - run: git pull
       - run: git stash
-      - run: git merge main
+      - run: git merge main --allow-unrelated-histories
       - run: git stash pop
