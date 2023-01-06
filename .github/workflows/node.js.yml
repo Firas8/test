@@ -22,13 +22,15 @@ jobs:
       - run: npm install
       - run: git checkout main
       - run: git fetch origin main
-      - run: NEW_VERSION=$(npm version major --git-tag-version false)
+      - run: echo "RELEASE_VERSION=$(npm version major --git-tag-version false)" >> $GITHUB_ENV
       - run: git config --global user.email "firas.gabsi@gmail.com"
       - run: git config --global user.name "firas8"
       - run: git add .
       - run: git commit -m "commit message"
+      - run: echo $RELEASE_VERSION
+      - run: echo ${{ env.RELEASE_VERSION }}
       - uses: actions/checkout@v3
       - uses: rickstaa/action-create-tag@v1
         with:
-          tag: $NEW_VERSION
+          tag: ${{ env.RELEASE_VERSION }}
       - run: git push origin main
