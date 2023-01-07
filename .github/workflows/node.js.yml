@@ -34,6 +34,4 @@ jobs:
         with:
           tag: ${{ env.RELEASE_VERSION }}
       - run: git checkout dev
-      - run: git pull
-      - run: git push
-      - run: git rebase main
+      - run: git merge -Xtheirs origin/master
