@@ -22,6 +22,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '12.x'
+      - run: npm install
       - run: git config --global user.email ${{ env.CI_EMAIL }}
       - run: git config --global user.name ${{ env.CI_LOGIN }}
       - run: git checkout main
@@ -39,4 +40,3 @@ jobs:
       - uses: rickstaa/action-create-tag@v1
         with:
           tag: ${{ env.RELEASE_VERSION }}
-      - run: npm install
