@@ -6,19 +6,8 @@ env:
   CI_EMAIL: "firas.gabsi@gmail.com"
 
 on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Environment to run tests against'
-        type: choice
-        required: true
-        options:
-          - staging
-          - prod
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: [ "main" ]
 
 jobs:
   Build:
