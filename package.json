@@ -1,6 +1,6 @@
 {
   "name": "demo-node",
-  "version": "63.0.0",
+  "version": "64.0.0",
   "description": "This NPM module is an example project to demonstrate the SemVer versioning",
   "main": "index.js",
   "scripts": {
