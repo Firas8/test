@@ -34,4 +34,4 @@ jobs:
         with:
           tag: ${{ env.RELEASE_VERSION }}
       - run: git checkout dev
-      - run: git rebase
+      - run: git rebase master dev
