@@ -32,6 +32,19 @@ jobs:
       # - name: 🐛 Run tests
       #   run: npm run test
 
+  securityscan:
+    name: njsscan check
+    runs-on: ubuntu-latest
+    needs: [ build ]
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+      - name: nodejsscan scan
+        id: njsscan
+        uses: ajinabraham/njsscan-action@master
+        with:
+          args: '.'
+
   release:
     name: Release
     runs-on: ubuntu-latest
