@@ -1,4 +1,3 @@
-
 class Calculate {
 
     constructor() { }
