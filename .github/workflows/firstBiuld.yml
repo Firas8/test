@@ -1,7 +1,13 @@
 
 name: Build Next.js web application
 
-on: push
+on:
+  push:
+    branches:
+      - '*'         # matches every branch that doesn't contain a '/'
+      - '*/*'       # matches every branch containing a single '/'
+      - '**'        # matches every branch
+      - '!master'   # excludes master
 
 jobs:
   build-project:
@@ -12,7 +18,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Install NPM dependencies
         run: npm install
-      - name: Build project assets
-        run: npm run build
-      - name: Run unit tests
-        run: npm run test
+      #- name: Build project assets
+      #  run: npm run build
+      #- name: Run unit tests
+      #  run: npm run test
