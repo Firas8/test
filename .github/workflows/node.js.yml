@@ -35,3 +35,4 @@ jobs:
           tag: ${{ env.RELEASE_VERSION }}
       - run: git checkout dev
       - run: git merge -Xtheirs main --allow-unrelated-histories
+      - run: git push
