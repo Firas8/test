@@ -10,6 +10,9 @@ on:
 jobs:
 
   build:
+    env:
+      CI_LOGIN: "firas8"
+      CI_EMAIL: "firas.gabsi@gmail.com"
 
     runs-on: ubuntu-latest
 
@@ -20,13 +23,12 @@ jobs:
         with:
           node-version: '12.x'
       - run: npm install
-      - run: git config --global user.email "firas.gabsi@gmail.com"
-      - run: git config --global user.name "firas8"
+      - run: git config --global user.email ${{ env.CI_EMAIL }}
+      - run: git config --global user.name ${{ CI_LOGIN }}
       - run: git checkout main
       - run: git pull
       - run: echo "RELEASE_VERSION=$(npm version major --git-tag-version false)" >> $GITHUB_ENV
       - run: echo $RELEASE_VERSION
-      - run: echo ${{ CI/CD.CI_EMAIL }}
       - run: git add .
       - run: git commit -m "Release "$RELEASE_VERSION
       - run: git push
