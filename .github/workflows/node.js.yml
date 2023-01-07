@@ -34,4 +34,4 @@ jobs:
         with:
           tag: ${{ env.RELEASE_VERSION }}
       - run: git checkout dev
-      - run: git rebase main -s recursive -X theirs
+      - run: git rebase main -s recursive -X theirs --skip
