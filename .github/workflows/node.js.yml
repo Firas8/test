@@ -24,7 +24,7 @@ jobs:
           node-version: '12.x'
       - run: npm install
       - run: git config --global user.email ${{ env.CI_EMAIL }}
-      - run: git config --global user.name ${{ CI_LOGIN }}
+      - run: git config --global user.name ${{ env.CI_LOGIN }}
       - run: git checkout main
       - run: git pull
       - run: echo "RELEASE_VERSION=$(npm version major --git-tag-version false)" >> $GITHUB_ENV
