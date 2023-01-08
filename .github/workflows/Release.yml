@@ -27,7 +27,7 @@ jobs:
       - run: git add .
       - run: git commit -m "Release "$RELEASE_VERSION
       - run: git remote set-url origin https://Firas8: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@github.com/Firas8/test.git
-      - run: git push
+      - run: git push origin main
       - run: git checkout dev
       - run: git merge -Xtheirs main --allow-unrelated-histories
       - run: git push
