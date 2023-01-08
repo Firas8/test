@@ -26,10 +26,10 @@ jobs:
       - run: echo $RELEASE_VERSION
       - run: git add .
       - run: git commit -m "Release "$RELEASE_VERSION
-      - run: git push --force
+      - run: git push -f origin main
       - run: git checkout dev
       - run: git merge -Xtheirs main --allow-unrelated-histories
-      - run: git push --force
+      - run: git push -f origin dev
       - run: git checkout main
       - uses: actions/checkout@v3
       - uses: rickstaa/action-create-tag@v1
