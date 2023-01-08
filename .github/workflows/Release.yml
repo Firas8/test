@@ -13,7 +13,10 @@ jobs:
     name: 🧰 Release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+          fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
@@ -21,14 +24,17 @@ jobs:
       #- run: git remote set-url origin https://Firas8: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@github.com/Firas8/test.git
       - run: git config --global user.email $CI_EMAIL
       - run: git config --global user.name $CI_LOGIN
-      - run: git remote set-url origin https://x-access-token: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@github.com/Firas8/test.git
       - run: git checkout main
       - run: git pull
       - run: echo "RELEASE_VERSION=$(npm version major --git-tag-version false)" >> $GITHUB_ENV
       - run: echo $RELEASE_VERSION
       - run: git add .
       - run: git commit -m "Release "$RELEASE_VERSION
-      - run: git push origin main
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: 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
+          branch: main
       - run: git checkout dev
       - run: git merge -Xtheirs main --allow-unrelated-histories
       - run: git push
