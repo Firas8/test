@@ -20,7 +20,7 @@ jobs:
           node-version: '12.x'
       - run: git config --global user.email $CI_EMAIL
       - run: git config --global user.name $CI_LOGIN
-      - run: git remote set-url https://Firas8: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@github.com/Firas8/test.git
+      - run: git remote set-url origin https://Firas8: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@github.com/Firas8/test.git
       - run: git checkout main
       - run: git pull
       - run: echo "RELEASE_VERSION=$(npm version major --git-tag-version false)" >> $GITHUB_ENV
