@@ -16,6 +16,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           token: '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'
+          github-server-url: 'https://firas8:FirasGabsi1!@github.com/Firas8/test.git'
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
