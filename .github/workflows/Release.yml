@@ -33,7 +33,7 @@ jobs:
       - name: Run the Action
         uses: devops-infra/action-pull-request@v0.5.3
         with:
-          github_token: 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
+          github_token: "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"
           title: test
           assignee: ${{ github.actor }}
           label: automatic,feature
