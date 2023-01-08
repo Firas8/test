@@ -13,14 +13,15 @@ jobs:
     name: 📦 Build project
     runs-on: ubuntu-latest
     steps:
+      - run: echo ${{secrets.CI_EMAIL}}
       - name: Use Node.js
         uses: actions/checkout@v3
       - name: Install NPM dependencies
         run: npm install
-      #- name: Build project
-      #  run: npm run build --if-present
-      #- name: 🧹 Run lint
-      #   run: npm run lint
+      - name: Build project
+        run: npm run build --if-present
+      - name: Run lint
+        run: npm run lint
 
   Test:
     name: 🐛 Unit Tests
@@ -28,9 +29,13 @@ jobs:
     needs: [ Build ]
     steps:
       - name: Use Node.js
-        uses: actions/checkout@v3
-      # - name: Run tests
-      #   run: npm run test
+        uses: actions/setup-node@v3
+      #  with:
+      #    node-version: '14.x'
+      #- name: Run Jest
+      #  uses: stefanoeb/jest-action@1.0.3
+      #- name: Run tests
+      #  run: npm run test
 
   SecurityScan:
     name: 🧹 Njsscan Check
