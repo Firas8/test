@@ -28,7 +28,7 @@ jobs:
       - run: echo $RELEASE_VERSION
       - run: git add .
       - run: git commit -m "Release "$RELEASE_VERSION
-      - run: git push
+      - run: git push --set-upstream origin release/new_version
 
       - name: Create Pull Request
         id: cpr
