@@ -14,13 +14,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          token: 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
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '12.x'
-      - run: git remote set-url origin https://Firas8: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@github.com/Firas8/test.git
+      #- run: git remote set-url origin https://Firas8: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@github.com/Firas8/test.git
       - run: git config --global user.email $CI_EMAIL
       - run: git config --global user.name $CI_LOGIN
+      - run: git remote set-url origin https://x-access-token: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@github.com/Firas8/test.git
       - run: git checkout main
       - run: git pull
       - run: echo "RELEASE_VERSION=$(npm version major --git-tag-version false)" >> $GITHUB_ENV
