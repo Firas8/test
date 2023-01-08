@@ -14,9 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          token: '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'
-          github-server-url: 'https://firas8:FirasGabsi1!@github.com/Firas8/test.git'
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
@@ -30,7 +27,12 @@ jobs:
       - run: echo $RELEASE_VERSION
       - run: git add .
       - run: git commit -m "Release "$RELEASE_VERSION
-      - run: git push
+      #- run: git push
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: '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'
+          branch: 'main'
       - run: git checkout dev
       - run: git merge -Xtheirs main --allow-unrelated-histories
       - run: git push
