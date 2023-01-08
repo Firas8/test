@@ -26,7 +26,7 @@ jobs:
       - run: echo $RELEASE_VERSION
       - run: git add .
       - run: git commit -m "Release "$RELEASE_VERSION
-      - run: git push https://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@github.com/github.com/Firas8/test.git
+      - run: git push https://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@github.com/Firas8/test.git
       - run: git checkout dev
       - run: git merge -Xtheirs main --allow-unrelated-histories
       - run: git push
