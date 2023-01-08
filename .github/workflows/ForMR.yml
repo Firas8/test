@@ -1,11 +1,11 @@
-
-name: Build Next.js web application
+name: Check Code
 
 on:
   push:
     branches:
       - '*/*'
       - '!main'
+      - '!dev'
 
 jobs:
   Build:
