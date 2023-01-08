@@ -67,8 +67,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '12.x'
-      - run: git config --global user.email $CI_EMAIL
-      - run: git config --global user.name $CI_LOGIN
+      - run: git config --global user.email ${{secrets.CI_EMAIL}}
+      - run: git config --global user.name ${{secrets.CI_USERNAME}}
       - run: git checkout main
       - run: git pull
       - run: echo "RELEASE_VERSION=$(npm version major --git-tag-version false)" >> $GITHUB_ENV
