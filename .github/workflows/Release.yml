@@ -20,18 +20,17 @@ jobs:
           node-version: '12.x'
       - run: git config --global user.email $CI_EMAIL
       - run: git config --global user.name $CI_LOGIN
+      - run: git remote set-utl https://Firas8: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@github.com/Firas8/test.git
       - run: git checkout main
       - run: git pull
       - run: echo "RELEASE_VERSION=$(npm version major --git-tag-version false)" >> $GITHUB_ENV
       - run: echo $RELEASE_VERSION
       - run: git add .
       - run: git commit -m "Release "$RELEASE_VERSION
-      - run: git push https://firas8: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@github.com/Firas8/test.git
+      - run: git push
       - run: git checkout dev
       - run: git merge -Xtheirs main --allow-unrelated-histories
       - run: git push
-      - run: git push
-      - run: git checkout main
       - uses: actions/checkout@v3
       - uses: rickstaa/action-create-tag@v1
         with:
