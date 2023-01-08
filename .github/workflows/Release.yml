@@ -36,8 +36,7 @@ jobs:
         with:
           token: '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'
           commit-message: Update report
-          committer: GitHub <noreply@github.com>
-          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          committer: firas8 firas.gabsi@gmail.com
           signoff: false
           branch: example-patches
           delete-branch: true
