@@ -12,26 +12,19 @@ jobs:
   Release:
     name: 🧰 Release
     runs-on: ubuntu-latest
-    permissions:
-      actions: write
-      checks: write
-      contents: write
-      deployments: write
-      id-token: write
-      issues: write
-      discussions: write
-      packages: write
-      pages: write
-      pull-requests: write
-      repository-projects: write
-      security-events: write
-      statuses: write
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '12.x'
+      - uses: oleksiyrudenko/gha-git-credentials@v2.1.1
+        with:
+          global: true
+          name: 'firas8'
+          email: 'firas.gabsi@gmail.com'
+          actor: 'Owner'
+          token: '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'
       - run: git config --global user.email $CI_EMAIL
       - run: git config --global user.name $CI_LOGIN
       - run: git checkout main
