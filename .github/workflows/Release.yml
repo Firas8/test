@@ -76,10 +76,10 @@ jobs:
       - run: echo $RELEASE_VERSION
       - run: git add .
       - run: git commit -m "Release "$RELEASE_VERSION
-      - run: git push
+      - run: git push --force
       - run: git checkout dev
       - run: git merge -Xtheirs main --allow-unrelated-histories
-      - run: git push
+      - run: git push --force
       - run: git checkout main
       - uses: actions/checkout@v3
       - uses: rickstaa/action-create-tag@v1
