@@ -13,7 +13,7 @@ jobs:
     name: 🧰 Release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
         with:
           token: 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
       - name: Use Node.js
