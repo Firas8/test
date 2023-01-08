@@ -68,6 +68,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '12.x'
+      #- run: git remote set-url origin https://firas8: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@github.com/firas8/test.git
       - run: git config --global user.email $CI_EMAIL
       - run: git config --global user.name $CI_LOGIN
       - run: git checkout main
