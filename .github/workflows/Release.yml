@@ -13,7 +13,7 @@ jobs:
     name: 📦 Build project
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{secrets.CI_EMAIL}}
+      - run: echo ${{ secrets.CI_EMAIL }}
       - name: Use Node.js
         uses: actions/checkout@v3
       - name: Install NPM dependencies
