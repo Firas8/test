@@ -25,12 +25,6 @@ jobs:
       security-events: write
       statuses: write
     steps:
-      - run: |
-          if [[ "${{ secrets.CI_PAT }}" == "" ]]; then
-             echo The secret does not exist
-            else
-             echo The secret exists
-          fi
       - name: Afficher
         run: echo $PAT
         env:
@@ -39,7 +33,7 @@ jobs:
       - name: Checkout TEST
         uses: actions/checkout@v2
         with:
-          token: $PAT
+          token: ${{ env.PAT }}
           fetch-depth: '0'
         env:
           PAT: ${{ secrets.CI_PAT }}
