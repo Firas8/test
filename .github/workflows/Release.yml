@@ -19,6 +19,7 @@ jobs:
         with:
           node-version: '12.x'
       - run: git remote set-url origin "Firas8@github.com:Firas8/test.git"
+      - run: git config --global credential.helper "osxkeychain"
       - run: git config --global user.email $CI_EMAIL
       - run: git config --global user.name $CI_LOGIN
       - run: git config --global remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
