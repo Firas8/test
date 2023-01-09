@@ -26,10 +26,10 @@ jobs:
     steps:
       - run: git config --global user.email $CI_EMAIL
       - run: git config --global user.name $CI_LOGIN
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
-          lfs: true
-          token: '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'
+          #token: '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'
+          token: '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'
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
