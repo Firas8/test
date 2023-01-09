@@ -32,7 +32,7 @@ jobs:
       - run: git config --list
       - run: cat .git/config
       #- run: git push
-      - run: git push https://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@github.com/Firas8/test.git --all
+      - run: git push Firas8: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@github.com:Firas8/test.git --all
       - run: git checkout dev
       - run: git merge -Xtheirs main --allow-unrelated-histories
       - run: git push
