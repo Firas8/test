@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: '12.x'
       - run: git remote set-url origin https://github.com/Firas8/test.git
-      - run: ls -l ~/.ssh/id_ed25519.pub
+      - run: ls -l ~/.ssh
       - run: git config --global user.email $CI_EMAIL
       - run: git config --global user.name $CI_LOGIN
       - run: git checkout main
