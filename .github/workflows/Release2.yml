@@ -74,7 +74,6 @@ jobs:
       - run: git checkout main
       - run: git pull
       - run: echo "RELEASE_VERSION=$(npm version major --git-tag-version false)" >> $GITHUB_ENV
-      - run: echo $RELEASE_VERSION
       - run: git add .
       - run: git commit -m "Release "$RELEASE_VERSION
       - run: git push
