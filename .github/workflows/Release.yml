@@ -24,6 +24,8 @@ jobs:
       security-events: write
       statuses: write
     steps:
+      - run: git config --global user.email $CI_EMAIL
+      - run: git config --global user.name $CI_LOGIN
       - uses: actions/checkout@v2
         with:
           lfs: true
@@ -33,8 +35,6 @@ jobs:
         with:
           node-version: '12.x'
       #- run: git remote set-url origin https://firas8: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@github.com/firas8/test.git
-      - run: git config --global user.email $CI_EMAIL
-      - run: git config --global user.name $CI_LOGIN
       - run: echo "RELEASE_VERSION=$(npm version major --git-tag-version false)" >> $GITHUB_ENV
       - run: echo $RELEASE_VERSION
       - run: git add .
