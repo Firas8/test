@@ -25,11 +25,6 @@ jobs:
       security-events: write
       statuses: write
     steps:
-      - name: Afficher
-        run: echo $PAT
-        env:
-          PAT: ${{ secrets.CI_PAT }}
-
       - name: Checkout TEST
         uses: actions/checkout@v2
         with:
@@ -45,7 +40,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '12.x'
-      #- run: git remote set-url origin https://firas8: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@github.com/firas8/test.git
       - run: echo "RELEASE_VERSION=$(npm version major --git-tag-version false)" >> $GITHUB_ENV
       - run: echo $RELEASE_VERSION
       - run: git add .
