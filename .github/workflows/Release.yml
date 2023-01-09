@@ -31,11 +31,11 @@ jobs:
           PAT: ${{ secrets.CI_PAT }}
 
       - name: Checkout TEST
-        env:
-          PAT: ${{ secrets.CI_PAT }}
         uses: actions/checkout@v2
         with:
           token: $PAT
+        env:
+          PAT: ${{ secrets.CI_PAT }}
 
       - run: git config --global user.email $CI_EMAIL
       - run: git config --global user.name $CI_LOGIN
