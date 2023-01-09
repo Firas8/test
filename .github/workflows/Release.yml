@@ -3,7 +3,6 @@ name: Realse
 env:
   CI_LOGIN: "GABSI"
   CI_EMAIL: "firas.gabsi@gmail.com"
-  PAT: ${{ firas.CI_PAT }}
 
 on:
   push:
@@ -13,6 +12,7 @@ jobs:
   Release:
     name: 🧰 Release
     runs-on: ubuntu-latest
+    environment: firas
     permissions:
       actions: write
       checks: write
@@ -27,8 +27,8 @@ jobs:
     steps:
       - name: Afficher
         run: echo $PAT
-      - name: Afficher2
-        run: echo ${{ env.PAT }}
+        env:
+          PAT: ${{ secrets.CI_PAT }}
 
       - name: Checkout TEST
         env:
