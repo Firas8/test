@@ -30,7 +30,7 @@ jobs:
       - name: Checkout M-WDG-Chassis
         uses: actions/checkout@v2
         with:
-          token: ${{ secret.CI_PAT }}
+          token: ${{ secrets.CI_PAT }}
 
       - run: git config --global user.email $CI_EMAIL
       - run: git config --global user.name $CI_LOGIN
