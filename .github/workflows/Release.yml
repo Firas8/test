@@ -18,8 +18,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '12.x'
-      - run: git remote set-url origin https://github.com/Firas8/test.git
-      - run: ls -l ~/.ssh
       - run: git config --global user.email $CI_EMAIL
       - run: git config --global user.name $CI_LOGIN
       - run: git checkout main
@@ -28,7 +26,7 @@ jobs:
       - run: echo $RELEASE_VERSION
       - run: git add .
       - run: git commit -m "Release "$RELEASE_VERSION
-      - run: git push origin
+      - run: git push https://Firas8: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@github.com/Firas8/test.git --all
       - run: git checkout dev
       - run: git merge -Xtheirs main --allow-unrelated-histories
       - run: git push
