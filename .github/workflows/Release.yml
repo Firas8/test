@@ -3,7 +3,7 @@ name: Realse
 env:
   CI_LOGIN: "GABSI"
   CI_EMAIL: "firas.gabsi@gmail.com"
-  PAT: ${{ secrets.firas.CI_PAT }}
+  PAT: ${{ firas.CI_PAT }}
 
 on:
   push:
