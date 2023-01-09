@@ -18,15 +18,19 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '12.x'
+      - run: git config --global user.email $CI_EMAIL
+      - run: git config --global user.name $CI_LOGIN
+      - run: git remote add origin-sp "git@github.com:Firas8/test.git" || true
+      - run: git push origin-sp --all -v
+      - run: git fetch
+      - run: git merge -s ours -m 'SCM-merge-from-master' origin/master
+      - run: git merge -s ours -m 'SCM-merge-from-develop' origin/dev
       - run: echo "RELEASE_VERSION=$(npm version major --git-tag-version false)" >> $GITHUB_ENV
-      - run: echo $RELEASE_VERSION
-      - run: git add .
-      - run: git commit -m "Release "$RELEASE_VERSION
-      - run: git push
-      - run: git checkout dev
-      - run: git merge -Xtheirs main --allow-unrelated-histories
-      - run: git push
-      - run: git checkout main
+      - run: git push origin-sp --all -v
+      - run: git push origin-sp --tags -v
+      - run: git push origin-sp --delete
+      - run: git remote rm origin-sp
+
       - uses: actions/checkout@v3
       - uses: rickstaa/action-create-tag@v1
         with:
