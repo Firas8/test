@@ -1,6 +1,6 @@
 {
   "name": "poc-headless",
-  "version": "27.0.1",
+  "version": "27.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
