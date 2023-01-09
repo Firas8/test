@@ -1,7 +1,7 @@
 name: Realse
 
 env:
-  CI_LOGIN: "firas8"
+  CI_LOGIN: "GABSI"
   CI_EMAIL: "firas.gabsi@gmail.com"
 
 on:
@@ -26,7 +26,8 @@ jobs:
       - run: echo $RELEASE_VERSION
       - run: git add .
       - run: git commit -m "Release "$RELEASE_VERSION
-      - run: git push https://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@github.com/Firas8/test.git --all
+      - run: git push
+      #- run: git push https://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@github.com/Firas8/test.git --all
       - run: git checkout dev
       - run: git merge -Xtheirs main --allow-unrelated-histories
       - run: git push
