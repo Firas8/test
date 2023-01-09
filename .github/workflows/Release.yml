@@ -21,6 +21,9 @@ jobs:
       - run: git remote set-url origin "Firas8@github.com:Firas8/test.git"
       - run: git config --global user.email $CI_EMAIL
       - run: git config --global user.name $CI_LOGIN
+      - run: git config --global remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+      - run: git config --global remote.origin-sp.url "https://github.com/Firas8/test.git"
+      - run: git config --global remote.origin-sp.fetch "+refs/heads/*:refs/remotes/origin-sp/*"
       - run: echo "RELEASE_VERSION=$(npm version major --git-tag-version false)" >> $GITHUB_ENV
       - run: echo $RELEASE_VERSION
       - run: git add .
