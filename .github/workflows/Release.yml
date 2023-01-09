@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '12.x'
-      - run: git remote set-url origin "Firas8@github.com:Firas8/test.git"
+      - run: git remote set-url origin "GABSI@github.com:Firas8/test.git"
       - run: git config --global credential.helper "osxkeychain"
       - run: git config --global user.email $CI_EMAIL
       - run: git config --global user.name $CI_LOGIN
@@ -32,7 +32,7 @@ jobs:
       - run: git config --list
       - run: cat .git/config
       #- run: git push
-      - run: git push Firas8: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@github.com:Firas8/test.git --all
+      - run: git push GABSI@github.com:Firas8/test.git --all
       - run: git checkout dev
       - run: git merge -Xtheirs main --allow-unrelated-histories
       - run: git push
