@@ -12,8 +12,21 @@ jobs:
   Release:
     name: 🧰 Release
     runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      checks: write
+      contents: write
+      deployments: write
+      issues: write
+      packages: write
+      pull-requests: write
+      repository-projects: write
+      security-events: write
+      statuses: write
     steps:
       - uses: actions/checkout@v3
+        with:
+          token: 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
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
@@ -21,9 +34,6 @@ jobs:
       #- run: git remote set-url origin https://firas8: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@github.com/firas8/test.git
       - run: git config --global user.email $CI_EMAIL
       - run: git config --global user.name $CI_LOGIN
-      - run: git remote -v
-      - run: git checkout main
-      - run: git pull
       - run: echo "RELEASE_VERSION=$(npm version major --git-tag-version false)" >> $GITHUB_ENV
       - run: echo $RELEASE_VERSION
       - run: git add .
