@@ -24,7 +24,7 @@ jobs:
       security-events: write
       statuses: write
     steps:
-      - run: echo ${{ secret.CI_PAT }}
+      - run: echo ${{ secrets.CI_PAT }}
       - uses: actions/checkout@v2
 
       - name: Checkout M-WDG-Chassis
