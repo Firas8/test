@@ -24,13 +24,17 @@ jobs:
       security-events: write
       statuses: write
     steps:
-      - run: echo ${{ secrets.CI_PAT }}
-      - uses: actions/checkout@v2
+      - name: Afficher
+        env:
+          PAT: ${{ secrets.CI_PAT }}
+        run: echo $PAT
 
-      - name: Checkout M-WDG-Chassis
+      - name: Checkout TEST
+        env:
+          PAT: ${{ secrets.CI_PAT }}
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.CI_PAT }}
+          token: $PAT
 
       - run: git config --global user.email $CI_EMAIL
       - run: git config --global user.name $CI_LOGIN
