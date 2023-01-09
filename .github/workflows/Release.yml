@@ -5,8 +5,9 @@ env:
   CI_EMAIL: "firas.gabsi@gmail.com"
 
 on:
+  pull_request:
   push:
-    branches: [ "main" ]
+    branches: main
 
 jobs:
   Release:
